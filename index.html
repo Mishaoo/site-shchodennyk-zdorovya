@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Твій трекер здоров'я</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <header class="hero-section glass-panel">
+        <div class="hero-content">
+            <h1 class="animate-text">Щоденник здоров'я</h1>
+            <p class="animate-text delay-1">Твій особистий помічник для моніторингу здоров’я. Відстежуй активність, аналізуй звички та отримуй корисні рекомендації у зручному форматі.</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="glass-card tilt-effect hidden">
+            <h2>🌟 Що вміє програма?</h2>
+            <ul class="animated-list">
+                <li><strong>Щоденник здоров'я:</strong> Легко фіксуй вагу, години сну, калорії, баланс води, кроки та настрій.</li>
+                <li><strong>Розумна статистика:</strong> Переглядай свій прогрес на красивих і зрозумілих графіках.</li>
+                <li><strong>Надійне збереження:</strong> Програма працює локально на твоєму ком'ютері, твої данні про здоров'я в повній безпеці оскільки знаходяться лише на твоєму пк.</li>
+            </ul>
+        </section>
+
+        <section class="glass-card tilt-effect hidden">
+            <h2>🎨 Дизайн, який надихає</h2>
+            <p>Інтерфейс, яким приємно користуватися щодня:</p>
+            <ul class="animated-list">
+                <li>Стильна темна тема, яка не втомлює очі.</li>
+                <li>Ефект "рідкого скла" — сучасний та легкий вигляд.</li>
+                <li>Плавні градієнти та неонові підсвітки кнопок.</li>
+            </ul>
+        </section>
+
+        <section class="glass-card tilt-effect hidden">
+            <h2>💻 Технології "під капотом"</h2>
+            <p>Програма працює швидко та стабільно, а дані зберігаються локально.</p>
+            <div class="tags">
+                <span class="glass-tag">Java</span>
+                <span class="glass-tag">JavaFX</span>
+                <span class="glass-tag">SQLite</span>
+            </div>
+        </section>
+
+        <div class="action-section hidden">
+            <a href="ТВІЙ_ЛІНК_НА_GITHUB" target="_blank" class="glass-button glow-effect">Завантажити з GitHub</a>
+            <button id="openDemoBtn" class="glass-button secondary-button">Спробувати онлайн</button>
+        </div>
+    </main>
+
+    <footer class="glass-footer">
+        <p>Розробник: Мосійчук Михайло. Луцьк 2026</p>
+    </footer>
+
+    <div id="demoModal" class="modal-overlay">
+        <div class="glass-card modal-content">
+            <button class="close-btn" id="closeDemoBtn">&times;</button>
+            
+            <div class="step active" id="step1">
+                <h2>Крок 1: Твій сон</h2>
+                <div class="input-group">
+                    <label>Скільки годин ти спав минулої ночі?</label>
+                    <input type="number" id="sleepInput" placeholder="Наприклад: 7" min="0" max="24">
+                </div>
+                <button class="glass-button small-btn next-btn" onclick="nextStep(2)">Далі</button>
+            </div>
+
+            <div class="step" id="step2">
+                <h2>Крок 2: Активність</h2>
+                <div class="input-group">
+                    <label>Скільки кроків ти пройшов сьогодні?</label>
+                    <input type="number" id="stepsInput" placeholder="Наприклад: 8000" min="0">
+                </div>
+                <div class="btn-row">
+                    <button class="glass-button small-btn secondary-button" onclick="prevStep(1)">Назад</button>
+                    <button class="glass-button small-btn next-btn" onclick="showResults()">Аналізувати</button>
+                </div>
+            </div>
+
+            <div class="step" id="step3">
+                <h2>📊 Твій міні-аналіз</h2>
+                <div id="analysisResult" class="result-text"></div>
+                <div class="upsell-box">
+                    <p class="highlight-text">Хочеш відстежувати 7 показників та бачити детальні графіки?</p>
+                    <p>Більше функціоналу та персональних рекомендацій у повній версії програми!</p>
+                </div>
+                <a href="ТВІЙ_ЛІНК_НА_GITHUB" target="_blank" class="glass-button glow-effect w-100">Завантажити Health Wave</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
